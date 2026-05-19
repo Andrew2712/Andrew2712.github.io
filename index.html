@@ -1218,10 +1218,19 @@ document.getElementById('formSubmit').addEventListener('click', async () => {
   btn.disabled = true;
 
   const res = await fetch('https://formspree.io/f/meedovjw', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name, email, subject, message: msg })
-  });
+  method: 'POST',
+  headers: { 
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
+  },
+  body: JSON.stringify({ 
+    name: name, 
+    email: email, 
+    subject: subject, 
+    message: msg,
+    _replyto: email
+  })
+});
 
   if (res.ok) {
     showToast('Message sent! I\'ll get back to you soon. 🙌');
