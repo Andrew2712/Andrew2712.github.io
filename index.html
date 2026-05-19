@@ -189,9 +189,6 @@ section{padding:7rem 1.5rem}
 .cursor{display:inline-block;width:2px;height:0.9em;background:var(--primary);border-radius:1px;vertical-align:middle;animation:blink 1s infinite}
 @keyframes blink{0%,50%{opacity:1}51%,100%{opacity:0}}
 
-/* socials */
-.hero-socials{display:flex;gap:8px;justify-content:center;margin-bottom:2.5rem}
-
 /* ===== ABOUT ===== */
 #about{background:var(--bg)}
 .cards4{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
@@ -331,6 +328,32 @@ section{padding:7rem 1.5rem}
   width:32px;height:32px;border-radius:8px;background:var(--accent-light);
   display:grid;place-items:center;font-size:15px;flex-shrink:0;
 }
+
+/* ===== aCoach special accent (blue/purple) ===== */
+.featured-card.acoach-card{border-color:rgba(99,102,241,0.15)}
+.featured-card.acoach-card:hover{border-color:rgba(99,102,241,0.4);box-shadow:0 0 60px rgba(99,102,241,0.15)}
+.acoach-glow1{background:rgba(99,102,241,0.1)!important}
+.acoach-glow2{background:rgba(139,92,246,0.08)!important}
+.dark .acoach-glow1{background:rgba(129,140,248,0.12)!important}
+.dark .acoach-glow2{background:rgba(167,139,250,0.1)!important}
+.feat-badge.acoach-badge{
+  border-color:rgba(99,102,241,0.4);background:rgba(99,102,241,0.08);
+  color:#6366f1;
+}
+.dark .feat-badge.acoach-badge{border-color:rgba(129,140,248,0.4);background:rgba(129,140,248,0.08);color:#818cf8}
+.feat-module.acoach-mod:hover{border-color:rgba(99,102,241,0.3)}
+.dark .feat-module.acoach-mod:hover{border-color:rgba(129,140,248,0.3)}
+.acoach-tags .tag:hover{border-color:rgba(99,102,241,0.4);color:#6366f1}
+.dark .acoach-tags .tag:hover{border-color:rgba(129,140,248,0.4);color:#818cf8}
+.btn-primary.acoach-btn{background:linear-gradient(135deg,#6366f1,#8b5cf6)}
+.btn-primary.acoach-btn:hover{background:linear-gradient(135deg,#4f46e5,#7c3aed);box-shadow:0 0 40px rgba(99,102,241,0.4)}
+.impact-badge.acoach-ib{background:rgba(99,102,241,0.08);color:#6366f1;border-color:rgba(99,102,241,0.15)}
+.dark .impact-badge.acoach-ib{color:#818cf8;border-color:rgba(129,140,248,0.15);background:rgba(129,140,248,0.08)}
+.feat-mod-icon.acoach-icon{background:rgba(99,102,241,0.1)}
+.dark .feat-mod-icon.acoach-icon{background:rgba(129,140,248,0.1)}
+
+/* featured label gap */
+.featured-label-gap{height:20px}
 
 .proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
 .proj-card{
@@ -543,7 +566,7 @@ section{padding:7rem 1.5rem}
 .contact-info{display:flex;flex-direction:column;gap:12px;margin-bottom:24px}
 .contact-info a,.contact-info div{
   display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text2);
-  transition:color .2s;padding:10px 12px;border-radius:var(--radius);
+  padding:10px 12px;border-radius:var(--radius);
   border:1px solid transparent;transition:all .2s;
 }
 .contact-info a:hover{color:var(--text);border-color:var(--border);background:var(--card)}
@@ -689,7 +712,7 @@ footer a{color:var(--primary)}
       </a>
     </div>
     <div class="hero-stats">
-      <div class="hero-stat"><div class="hero-stat-k">Projects</div><div class="hero-stat-v">6+ AI/ML</div></div>
+      <div class="hero-stat"><div class="hero-stat-k">Projects</div><div class="hero-stat-v">7+ AI/ML</div></div>
       <div class="hero-stat"><div class="hero-stat-k">Certifications</div><div class="hero-stat-v">3+ Industry</div></div>
       <div class="hero-stat"><div class="hero-stat-k">Deep Learning</div><div class="hero-stat-v">CNN · NLP · CV</div></div>
       <div class="hero-stat"><div class="hero-stat-k">Education</div><div class="hero-stat-v">MSc Analytics</div></div>
@@ -712,7 +735,7 @@ footer a{color:var(--primary)}
       <div class="card fade-up">
         <div class="card-icon">🧠</div>
         <h3>AI/ML Engineering</h3>
-        <p>Designing models from research to production — CNNs, NLP, classical ML.</p>
+        <p>Designing models from research to production — CNNs, NLP, multi-agent pipelines.</p>
       </div>
       <div class="card fade-up">
         <div class="card-icon">⚡</div>
@@ -750,6 +773,7 @@ footer a{color:var(--primary)}
             <span class="pill">TensorFlow</span><span class="pill">CNN Architectures</span><span class="pill">scikit-learn</span>
             <span class="pill">Data Analytics</span><span class="pill">Python</span><span class="pill">SQL</span>
             <span class="pill">AWS</span><span class="pill">Streamlit</span><span class="pill">OpenCV</span>
+            <span class="pill">FastAPI</span><span class="pill">Multi-Agent Systems</span>
           </div>
         </div>
         <div class="about-detail-card fade-up">
@@ -774,7 +798,7 @@ footer a{color:var(--primary)}
     <div class="skills-grid">
       <div class="skill-card fade-up">
         <div class="skill-card-head"><div class="skill-icon">🧠</div><h3>AI & Machine Learning</h3></div>
-        <div class="tags"><span class="tag">Deep Learning</span><span class="tag">CNN</span><span class="tag">Supervised ML</span><span class="tag">Unsupervised ML</span><span class="tag">scikit-learn</span><span class="tag">TensorFlow</span><span class="tag">Keras</span></div>
+        <div class="tags"><span class="tag">Deep Learning</span><span class="tag">CNN</span><span class="tag">Supervised ML</span><span class="tag">Unsupervised ML</span><span class="tag">scikit-learn</span><span class="tag">TensorFlow</span><span class="tag">Keras</span><span class="tag">Multi-Agent Systems</span></div>
       </div>
       <div class="skill-card fade-up">
         <div class="skill-card-head"><div class="skill-icon">👁</div><h3>Computer Vision & NLP</h3></div>
@@ -790,7 +814,7 @@ footer a{color:var(--primary)}
       </div>
       <div class="skill-card fade-up">
         <div class="skill-card-head"><div class="skill-icon">🚀</div><h3>Deployment & Cloud</h3></div>
-        <div class="tags"><span class="tag">Streamlit</span><span class="tag">AWS</span><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">React</span><span class="tag">Tailwind</span></div>
+        <div class="tags"><span class="tag">Streamlit</span><span class="tag">FastAPI</span><span class="tag">Docker</span><span class="tag">AWS</span><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">React</span><span class="tag">Tailwind</span></div>
       </div>
       <div class="skill-card fade-up">
         <div class="skill-card-head"><div class="skill-icon">🤝</div><h3>Soft Skills</h3></div>
@@ -811,7 +835,7 @@ footer a{color:var(--primary)}
       <p class="section-sub fade-up">End-to-end AI systems — from research and architecture to deployment.</p>
     </div>
 
-    <!-- Featured -->
+    <!-- Featured 1: Clinic CRM -->
     <div class="featured-card fade-up">
       <div class="featured-glow1"></div>
       <div class="featured-glow2"></div>
@@ -857,8 +881,61 @@ footer a{color:var(--primary)}
       </div>
     </div>
 
+    <!-- Featured 2: aCoach -->
+    <div class="featured-label-gap"></div>
+    <div class="featured-card acoach-card fade-up">
+      <div class="featured-glow1 acoach-glow1"></div>
+      <div class="featured-glow2 acoach-glow2"></div>
+      <div class="featured-inner">
+        <div>
+          <div class="feat-badge acoach-badge">🏋️ Featured · Multi-Agent AI · Fitness &amp; Health</div>
+          <h3>aCoach — AI Fitness Coach Platform</h3>
+          <p class="feat-desc">A production-grade multi-agent AI fitness coaching system that ingests wearable data from Fitbit &amp; Strava, predicts fatigue and burnout risk in real time, and delivers personalized recovery plans and weekly forecasts — all powered by an ML pipeline with memory-persistent agents.</p>
+          <ul class="feat-features">
+            <li>Multi-agent architecture: analysis, decision, memory, inference, fusion &amp; session agents</li>
+            <li>Fatigue prediction using versioned ML models (sklearn + joblib) trained on real Fitbit data</li>
+            <li>Burnout risk alert system with daily &amp; session-level HRV-based scoring</li>
+            <li>Wearable integrations via Fitbit OAuth &amp; Strava API with live pipeline agent</li>
+            <li>Personalized recovery plans, weekly forecasts &amp; AI-generated goal planning</li>
+            <li>Memory-persistent agent layer — learns from user sessions across time</li>
+            <li>React frontend dashboard with burnout status, forecast, and progress cards</li>
+            <li>Dockerized FastAPI backend with APScheduler for automated daily coaching</li>
+          </ul>
+          <div class="tags acoach-tags" style="margin-bottom:20px">
+            <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">scikit-learn</span>
+            <span class="tag">React</span><span class="tag">Vite</span><span class="tag">Docker</span>
+            <span class="tag">Fitbit API</span><span class="tag">Strava API</span><span class="tag">Pandas</span>
+            <span class="tag">NumPy</span><span class="tag">APScheduler</span><span class="tag">joblib</span>
+          </div>
+          <div class="impact-row" style="margin-bottom:1.25rem">
+            <span class="impact-badge acoach-ib">Multi-Agent AI</span>
+            <span class="impact-badge acoach-ib">Fatigue ML Model</span>
+            <span class="impact-badge acoach-ib">Wearable Integration</span>
+            <span class="impact-badge acoach-ib">Burnout Detection</span>
+            <span class="impact-badge acoach-ib">Dockerized</span>
+            <span class="impact-badge acoach-ib">Full-Stack</span>
+          </div>
+          <div class="feat-actions">
+            <a href="https://github.com/Andrew2712/ai_fitness_coach" target="_blank" class="btn-primary acoach-btn" style="padding:10px 18px;font-size:13px">⌥ GitHub →</a>
+            <a href="#contact" class="btn-outline" style="padding:10px 18px;font-size:13px">Request Demo →</a>
+          </div>
+        </div>
+        <div class="feat-panel">
+          <div class="feat-panel-bg"></div>
+          <div style="position:relative">
+            <div class="feat-module acoach-mod"><div class="feat-mod-icon acoach-icon">🤖</div> Multi-agent decision system</div>
+            <div class="feat-module acoach-mod"><div class="feat-mod-icon acoach-icon">📈</div> Fatigue &amp; HRV prediction</div>
+            <div class="feat-module acoach-mod"><div class="feat-mod-icon acoach-icon">⌚</div> Fitbit &amp; Strava integration</div>
+            <div class="feat-module acoach-mod"><div class="feat-mod-icon acoach-icon">🧠</div> Persistent memory agent</div>
+            <div class="feat-module acoach-mod"><div class="feat-mod-icon acoach-icon">🔥</div> Burnout risk alerts</div>
+            <div class="feat-module acoach-mod"><div class="feat-mod-icon acoach-icon">🗓️</div> Weekly AI forecast &amp; goals</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Other projects -->
-    <div class="proj-grid">
+    <div class="proj-grid" style="margin-top:20px">
       <div class="proj-card fade-up">
         <div class="proj-tag">Deep Learning · CNN</div>
         <h3>CIFAR-10 Image Classifier</h3>
@@ -976,7 +1053,7 @@ footer a{color:var(--primary)}
       </div>
       <div class="cert-card-new fade-up">
         <div class="cert-icon-new">🤖</div>
-        <h3>Big Data, Artificial Intelligence & Ethics</h3>
+        <h3>Big Data, Artificial Intelligence &amp; Ethics</h3>
         <div class="cert-issuer-new">UC Davis · Coursera</div>
         <div class="cert-year">🏅 November 2022</div>
       </div>
@@ -1055,8 +1132,8 @@ footer a{color:var(--primary)}
       <h2 class="section-title fade-up">What I bring to the <span class="text-grad">table</span>.</h2>
     </div>
     <div class="str-grid">
-      <div class="str-card fade-up"><div class="str-icon">🧠</div><h3>AI/ML Engineering</h3><p>From CNN architectures to NLP pipelines — building and deploying real models.</p></div>
-      <div class="str-card fade-up"><div class="str-icon">📐</div><h3>System Design</h3><p>Scalable architecture thinking applied to healthcare SaaS and intelligent platforms.</p></div>
+      <div class="str-card fade-up"><div class="str-icon">🧠</div><h3>AI/ML Engineering</h3><p>From CNN architectures to NLP pipelines and multi-agent systems — building and deploying real models.</p></div>
+      <div class="str-card fade-up"><div class="str-icon">📐</div><h3>System Design</h3><p>Scalable architecture thinking applied to healthcare SaaS, fitness AI, and intelligent platforms.</p></div>
       <div class="str-card fade-up"><div class="str-icon">📊</div><h3>Data-Driven Thinking</h3><p>Analytical problem solving backed by statistical rigor and clean data pipelines.</p></div>
       <div class="str-card fade-up"><div class="str-icon">⚡</div><h3>Full-Stack Depth</h3><p>End-to-end ownership from database schema to production deployment.</p></div>
       <div class="str-card fade-up"><div class="str-icon">🔬</div><h3>Research Mindset</h3><p>Translating academic ML research into pragmatic engineering solutions.</p></div>
@@ -1160,7 +1237,7 @@ const revealObs = new IntersectionObserver((entries)=>{
 document.querySelectorAll('.fade-up').forEach(el=>revealObs.observe(el));
 
 // ── Typing ──────────────────────────────
-const phrases=['AI & Data Science Engineer','Deep Learning Specialist','Computer Vision Developer','NLP Engineer','Full-Stack AI Builder'];
+const phrases=['AI & Data Science Engineer','Deep Learning Specialist','Computer Vision Developer','NLP Engineer','Full-Stack AI Builder','Multi-Agent Systems Dev'];
 let pi=0,ci=0,del=false;
 const typingEl = document.getElementById('typingText');
 function type(){
