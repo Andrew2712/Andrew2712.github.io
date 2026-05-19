@@ -1205,16 +1205,33 @@ function type(){
 type();
 
 // Form
-document.getElementById('formSubmit').addEventListener('click',()=>{
-  const name=document.getElementById('contactName').value.trim();
-  const email=document.getElementById('contactEmail').value.trim();
-  if(!name||!email){showToast('Please fill in name and email.','error');return;}
-  const toast=document.getElementById('toast');
-  const msg=document.getElementById('toastMsg');
-  msg.textContent='Message noted! Andrew will be in touch soon 🙌';
-  toast.classList.add('show');
-  setTimeout(()=>toast.classList.remove('show'),4000);
-  ['contactName','contactEmail','contactSubject','contactMsg'].forEach(id=>document.getElementById(id).value='');
+document.getElementById('formSubmit').addEventListener('click', async () => {
+  const name = document.getElementById('contactName').value.trim();
+  const email = document.getElementById('contactEmail').value.trim();
+  const subject = document.getElementById('contactSubject').value.trim();
+  const msg = document.getElementById('contactMsg').value.trim();
+
+  if (!name || !email) { showToast('Please fill in name and email.'); return; }
+
+  const btn = document.getElementById('formSubmit');
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+
+  const res = await fetch('https://formspree.io/f/meedovjw', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, email, subject, message: msg })
+  });
+
+  if (res.ok) {
+    showToast('Message sent! I\'ll get back to you soon. 🙌');
+    ['contactName','contactEmail','contactSubject','contactMsg'].forEach(id => document.getElementById(id).value = '');
+  } else {
+    showToast('Something went wrong. Please email me directly.');
+  }
+
+  btn.textContent = 'Send Message →';
+  btn.disabled = false;
 });
 
 function showToast(text){
